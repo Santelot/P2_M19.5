@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M19.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            // Control de actividades y pasos según el tiempo seleccionado
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            // Actualizar el tiempo seleccionado en la página
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P2-M19.5</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        
+		<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificación de dispositivos y materiales antes de iniciar.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar (Diapositiva 1): Revisar que todos los dispositivos estén encendidos, conectados a internet, y que Scratch esté abierto en modo "Crear". Confirmar que las Magic Tablets estén disponibles, que haya un set de 6 Legos en el lugar de cada alumno, y que el espacio esté organizado para trabajar cómodamente.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No se utiliza diálogo con los estudiantes en esta etapa.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 2): Dar la bienvenida a los estudiantes con entusiasmo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¡Bienvenidos a esta nueva misión en Scratch! Hoy vamos a convertirnos en exploradores digitales de México, creando historias animadas sobre lugares increíbles. ¿Listos para descubrir, programar y brillar como verdaderos artistas digitales?”
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 3): Pedir a los estudiantes que indiquen cómo se sienten usando poses que representen diferentes niveles de entusiasmo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de empezar, quiero saber cómo se sienten hoy! Si están súper emocionados y listos para conquistar el mundo del Scratch, levanten los brazos con una gran sonrisa como si celebraran un gol ⚽. Si necesitan un poco más de energía y están pensando en cómo explorar este mundo, crucen los brazos y pongan cara de exploradores serios como si estudiaran un mapa 🗺️. ¡A ver esas poses geniales!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 4): Guiar a los estudiantes a realizar el ritual juntos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora hagamos nuestro ritual Gnius! Juntamos nuestras manos y decimos: ‘¡Gracias por estar aquí, Genios! Hoy vamos a explorar México a través de Scratch, creando historias increíbles. ¡A disfrutar, aprender y celebrar juntos!’"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 5): Introducir los objetivos de la misión.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy tenemos dos grandes <span style="color: red; font-weight: bold;">objetivos</span>: 1. Aprender a usar Scratch para crear historias animadas sobre lugares de México. 2. Divertirnos creando personajes que interactúan con diferentes escenarios, movimientos y sonidos. ¡Será una misión llena de cultura, tecnología y mucha diversión!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-2" class="activity" data-time="4">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Ejercicio interactivo para preparar la mente como exploradores digitales.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 6): Explicar cómo las historias animadas necesitan una secuencia lógica de acciones e introducir la idea de construir elementos de México con los bloques.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! Vamos a preparar nuestros cerebros para pensar como exploradores y programadores de México. Primero, recordaremos las <span style="color: red; font-weight: bold;">secuencias</span> y luego, ¡daremos rienda suelta a nuestra creatividad! Siguiendo mis <span style="color: red; font-weight: bold;">instrucciones</span>, nos moveremos por el salón y luego usaremos nuestros bloques para construir elementos típicos de México. ¿Listos para esta doble aventura?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar (Diapositiva 7): Indicar los pasos a seguir para simular una animación en la vida real y construir un elemento de México con los bloques.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora vamos a programar nuestros cuerpos en México! Sigan esta <span style="color: red; font-weight: bold;">secuencia</span>:<br>
+                    1. Caminen como si estuvieran en una selva, diciendo ‘¡Qué verde es!’ 🌿.<br>
+                    2. Salten como si vieran una mariposa, diciendo ‘¡Qué bonita!’ 🦋.<br>
+                    3. Giren como si estuvieran viendo una pirámide, diciendo ‘¡Qué imponente!’ 🏛️.<br>
+                    Y ahora, con sus seis bloques, ¡construyan algo de México! Puede ser un sombrero, un cactus, una pirámide, un animalito, ¡lo que se les ocurra!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar (Diapositiva 8): Explicar cómo repetir movimientos y describir elementos ayuda a crear bucles e historias en las animaciones, conectándolo con el trabajo en Scratch.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios, lo hicieron genial como exploradores y constructores de México! Ahora, vamos a repetir esta <span style="color: red; font-weight: bold;">secuencia</span> 2 veces y después compartan una descripción de lo que construyeron y qué representa. Esto es como crear un <span style="color: red; font-weight: bold;">bucle</span> y darle contexto a nuestros personajes en Scratch. ¡A moverse, construir, y contar historias como verdaderos programadores mexicanos!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Desafío para crear historias animadas sobre lugares de México en Scratch.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 9): Presentar el desafío y los tres niveles (Rookie, Master, Hacker), explicando sus objetivos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de México, llegó la hora de la verdad! 🚀 Vamos a convertirnos en exploradores digitales de nuestro país, creando historias increíbles en Scratch. Tenemos tres niveles de desafío: Rookie, Master y Hacker, cada uno diseñado para que brillen con su creatividad y habilidades. ¡A elegir su aventura mexicana!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 10): Describir todos los pasos y metas específicas de cada nivel al mismo tiempo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    """Aquí tienen los detalles de su expedición digital por México:<br><br>
+                    <strong>Nivel Rookie: 'Conociendo el Lugar'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear una escena inicial donde el personaje principal llegue al lugar elegido y se presente.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un fondo que represente el lugar de México que seleccionaste. Añade un personaje que se mueva y se detenga para presentarse. Haz que el personaje diga algo sobre el lugar.<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa bloques de ‘decir’ y ‘moverse’ para la introducción.<br><br>
+
+                    <strong>Nivel Master: 'Descubriendo Lugares'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear dos escenas adicionales que muestren diferentes partes del lugar elegido.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Añade dos fondos nuevos de partes importantes del lugar. Programa al personaje para que se mueva entre escenas. Haz que el personaje realice una acción diferente en cada escena. Incluye un sonido relacionado con el lugar.<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa ‘al presionar tecla’ o ‘al hacer clic’ para permitir la interacción.<br><br>
+
+                    <strong>Nivel Hacker: 'Exploración Interactiva'</strong><br>
+                    <span style="color: red; font-weight: bold;">Objetivo:</span> Crear un proyecto en Scratch donde el personaje explore diferentes áreas de un lugar de México, con transiciones automáticas, animaciones y sonidos únicos.<br>
+                    <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña una introducción que presente el lugar y las áreas a explorar. Programa al personaje para que cambie automáticamente entre fondos usando ‘esperar’ y ‘ir a fondo’. Haz que el personaje realice diferentes movimientos en cada escena, diga algo sobre el lugar y usa sonidos de la biblioteca para cada lugar. Cierra el proyecto con una despedida interactiva.<br>
+                    <span style="color: red; font-weight: bold;">Condiciones:</span> Debe incluir al menos tres fondos (introducción y dos áreas). Las transiciones deben ser automáticas y fluidas. Cada área debe tener una animación y sonido único.<br>
+                    <span style="color: red; font-weight: bold;">Consejo:</span> Usa bloques de ‘esperar’ y ‘ir a fondo’ para crear la transición automática entre escenas."""
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 11): Temporizador de 20 minutos con recordatorio de los niveles y ejemplos visuales para inspirar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Es su turno, exploradores digitales de México! Tienen 20 minutos para construir su proyecto en Scratch. Recuerden que su creatividad es el motor de esta aventura, así que, ¡a dar vida a sus lugares favoritos! ¡El reto los espera!"
+                </td>
+            </tr>
+            <tr class="step-4">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 12): Temporizador de 5 minutos para ajustes finales, con recordatorio visual de los detalles a revisar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Gran trabajo, Genios! Ahora, 5 minutos para pulir sus proyectos. Asegúrense de que los movimientos, sonidos y la interacción entre escenas fluyan de manera natural. ¡Dejen sus lugares de México listos para sorprender a todos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar (Diapositiva 13): Reflexionar sobre los aprendizajes y retos enfrentados durante el desafío.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Increíble trabajo, exploradores de México! Reflexionemos: ¿Qué aprendieron al programar sus historias en Scratch? ¿Qué fue lo más desafiante y cómo lo resolvieron? ¿Qué los inspiró de los lugares que eligieron? ¡Compartan su experiencia y celebremos juntos el orgullo de nuestra cultura!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 14): Revisar los objetivos específicos del desafío con los estudiantes.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hagamos un último chequeo: ¿Crearon historias animadas sobre lugares de México? ¿Usaron movimientos, sonidos y transiciones para dar vida a sus proyectos? ¡Estoy seguro de que lograron cosas maravillosas. Felicidades, Genios!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-4" class="activity" data-time="10">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Trabajo colaborativo para enriquecer historias animadas sobre México.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 15): Mostrar instrucciones para formar equipos pequeños.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de México, es tiempo de unir fuerzas! 🇲🇽 Formen grupos de dos o tres exploradores para compartir sus proyectos y darnos ideas geniales. Juntos, podemos enriquecer nuestras historias y celebrar la belleza de México."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Proyectar (Diapositiva 16): Temporizador de 30 segundos para formar los equipos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para formar sus equipos! Busquen a sus compañeros rápidamente y prepárense para compartir sus increíbles historias. ¡A trabajar en equipo como verdaderos exploradores mexicanos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0,5 minutos):</strong> Proyectar (Diapositiva 17): Explicar la importancia de usar las Magic Tablets para registrar ideas clave.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Exploradores, saquen sus Magic Tablets! 📝 Anoten todo lo que les inspire de los proyectos de sus compañeros. Recuerden que cada idea cuenta para enriquecer nuestras historias sobre México. ¡Sus notas serán muy valiosas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0,5 minutos):</strong> Proyectar (Diapositiva 18): Temporizador de 30 segundos para recoger las Magic Tablets.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para tomar sus Magic Tablets y prepararse para compartir y enriquecer sus creaciones! ¡Manos a la obra!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (4 minutos):</strong> Proyectar (Diapositiva 19): Explicar el método <span style="color: red; font-weight: bold;">Think-Pair-Share</span> y guiar a los equipos para reflexionar y colaborar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a usar el método <span style="color: red; font-weight: bold;">Think-Pair-Share</span> para darle vida a nuestras historias! Primero, piensen individualmente en cómo mejorarían el proyecto de su compañero. Luego, compartan sus ideas y elijan las mejores. Y finalmente, trabajen juntos para implementar esas mejoras. ¡Juntos haremos que México brille en Scratch!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (3 minutos):</strong> Proyectar (Diapositiva 20): Instrucciones para la colaboración activa con un temporizador de 3 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡A trabajar en equipo, Genios! ⏱️ Tienen 3 minutos para aplicar las mejoras que discutieron. Recuerden que cada detalle cuenta para que su proyecto sea aún más representativo de México. ¡Confío en su creatividad!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (1 minuto):</strong> Proyectar (Diapositiva 21): Preguntas para reflexionar sobre la colaboración y los resultados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Reflexionemos sobre esta aventura creativa! ¿Qué aprendieron trabajando juntos? ¿Cómo lograron que los proyectos de sus compañeros fueran más emocionantes? ¿Cuál fue la mejor idea que surgió de esta colaboración mexicana? ¡Compartan sus aprendizajes y celebremos la diversidad y riqueza de México!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div id="activity-5" class="activity" data-time="4">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0,5 minutos):</strong> Proyectar (Diapositiva 22): Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios exploradores de México, ha llegado el momento de celebrar nuestros logros! 🇲🇽 Revisemos juntos nuestros <span style="color: red; font-weight: bold;">objetivos</span>: ¿Creamos historias animadas sobre lugares de México en Scratch? ¿Exploramos movimientos, sonidos y trabajamos en equipo? Estoy seguro de que cada uno hizo un trabajo increíble, así que compartan sus sensaciones con nosotros."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0,5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles exploradores digitales de México. Cada proyecto fue una aventura en nuestra cultura y creatividad. ¡Estoy muy orgulloso de todos los Genios mexicanos que tenemos aquí! ¡Un aplauso para su dedicación y esfuerzo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 23): Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como verdaderos exploradores, debemos honrar nuestro laboratorio. Recojan sus Magic Tablets, bloques y todos los materiales que usamos, y dejen el aula en perfecto orden. ¡Recuerden que cuidar nuestro espacio es una muestra de respeto por nuestra comunidad!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+		
+    </div>
+</body>
+</html>
